@@ -1,7 +1,7 @@
 "use client";
 
 import { MdArrowBack, MdClose } from "react-icons/md";
-import styles from "./report.module.css";
+import styles from "../report.module.css";
 import { RiSurveyLine } from "react-icons/ri";
 import { fetchChartData } from "@/utils/chartsUtils";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";

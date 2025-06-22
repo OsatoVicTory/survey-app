@@ -1,5 +1,5 @@
 import ReportPage from "./reportPage";
-import styles from "./report.module.css";
+import styles from "../report.module.css";
 
 type Params = Promise<{ id: string }>;
 

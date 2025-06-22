@@ -1,14 +1,14 @@
 import { LoadingSpinner } from "@/components/loadingSpinner";
-import styles from "../../report/report.module.css";
+import styles from "../report.module.css";
 
-export default function SurveyLoading() {
+export default function ReportIdLoading() {
 
     return (
         <div className={styles.ReportLoading}>
             <div>
                 <LoadingSpinner width={'10px'} height={'10px'} color={''} />
                 <h1>mavvle</h1>
-                <h3>Loading Survey</h3>
+                <h3>{"Loading Report"}</h3>
             </div>
         </div>
     );
