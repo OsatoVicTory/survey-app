@@ -1,0 +1,321 @@
+.ReportPage {
+    width: 100%;
+    height: 100%;
+}
+.ReportLoading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ReportLoading > div {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ReportLoading h1 {
+    color: rgb(80, 229, 235);
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.ReportLoading h3 {
+    font-size: 24px;
+    font-weight: 660;
+    color: #33384a;
+    opacity: 0.9;
+    margin-top: 12px;
+}
+
+
+/* Report Page */
+.Report {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.Rp {
+    display: flex;
+    position: relative;
+    height: calc(100% - 76px);
+}
+.Report_main {
+    width: calc(100% - 360px);
+    height: 100%;
+    overflow: auto;
+    transition: width 0.3s ease-in-out;
+}
+.Report_main_false {
+    width: 100%;
+}
+.Report_main_div {
+    width: max(1210px, 100%);
+    padding: 30px 70px;
+    background-color: whitesmoke;
+}
+.Rmd {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.Rmd_li {
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    margin-top: 30px;
+}
+.Rmd_title {
+    width: 100%;
+    background-color: #363b4e;
+    padding: 20px 27px;
+    overflow-x: auto;
+}
+.Rmdt_icon {
+    width: 39px;
+    height: 35px;
+    color: var(--white);
+}
+.Rmd_title span {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--white);
+    margin-left: 20px;
+}
+.Rmd_main {
+    margin-top: 5px;
+    background-color: var(--white);
+    padding: 20px 35px;
+    padding-bottom: 50px;
+    /* min-height: 570px; */
+}
+.Ra_aside_close {
+    position: absolute;
+    top: 21px;
+    right: 21px;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: #303339;
+    box-shadow: var(--boxshadow);
+}
+.Ra_aside_close:hover {
+    opacity: 0.9;
+}
+.Report_aside {
+    width: 360px;
+    height: 100%;
+    background-color: #33384a;
+    position: absolute;
+    z-index: 999;
+    transition: right 0.3s ease-in-out;
+    right: 0px;
+    top: 0px;
+}
+.Report_aside_false {
+    right: -360px;
+}
+.Ra_nav {
+    width: 100%;
+    background-color: #363b4e;
+    padding: 12px;
+    border-bottom: 1px solid #303339;
+    box-shadow: 0px 0.45px 1px #303339;
+}
+.Rav_icon {
+    width: 19px;
+    height: 19px;
+}
+.Ra_nav_name span {
+    margin-left: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white);
+}
+.Ra_nav_close {
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.Ranc_icon {
+    width: 21px;
+    height: 21px;
+    color: var(--white);
+}
+.Ra_nav_close:hover {
+    background-color: #303339;
+}
+.Ra_body {
+    width: 100%;
+    height: calc(100% - 57px);
+    padding: 10px 0px;
+    overflow-y: auto;
+    scrollbar-color: #292d3c #434a60;
+}
+.Rab_ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.Rab_li {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: calc((100% - 190px) / 2) 190px calc((100% - 190px) / 2);
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.Rab_li_isSelected {
+    background-color: #434a60;
+    border-left: 1px solid var(--blue);
+}
+.Rab_li:hover {
+    background-color: #303339;
+}
+.Rab_li_number {
+    font-size: 15px;
+    color: var(--white);
+    font-weight: 550;
+}
+.Rab_li_thumbNail {
+    height: 120px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Rab_li_thumbNail img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.Form_nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    background-color: var(--white);
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); */
+    /* border-bottom: 1px solid #303339; */
+    border-bottom: 1px solid var(--bordergrey);
+    box-shadow: 1px 8px 15px rgba(0, 0, 0, 0.99);
+}
+.Fn_div {
+    width: 33%;
+    display: flex;
+    align-items: center;
+}
+.Fn_div:nth-child(2) {
+    justify-content: center;
+}
+.Fn_div:last-child {
+    justify-content: flex-end;
+}
+.Fn_back {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Fn_back:hover {
+    background-color: rgba(18, 18, 18, 0.05);
+}
+.Fn_back_icon {
+    width: 24px;
+    height: 21px;
+    color: #000000;
+    opacity: 0.66;
+}
+.Fn_doc_icon {
+    width: 35px;
+    height: 35px;
+    color: var(--blue);
+    margin-left: 15px;
+}
+.Fn_editable {
+    width: max-content;
+    font-size: 23px;
+    color: #000000;
+    opacity: 0.77;
+    display: flex;
+    align-items: center;
+    margin-left: 7px;
+}
+.Fn_logo {
+    color: rgb(80, 229, 235);
+    font-weight: bold;
+    font-size: 24px;
+}
+.Fn_btn {
+    width: max-content;
+    padding: 7px 21px;
+    padding-left: 18px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    opacity: 0.93;
+    background-color: rgba(0, 0, 0, 0.81);
+}
+.Fn_btn:hover {
+    background-color: rgba(0, 0, 0, 0.66);
+    /* background-color: rgb(76, 208, 212); */
+} 
+.Fn_btn_icon {
+    width: 18px;
+    height: 18px;
+    color: var(--white);
+}
+.Fn_btn_icon_true {
+    animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.Fn_btn span {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.Fn_profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--grey);
+    opacity: 0.85;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 18px;
+}
+
+@media screen and (max-width: 500px) {
+    .ReportLoading h1 {
+        font-size: 27px;
+    }
+}

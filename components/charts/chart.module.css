@@ -1,0 +1,40 @@
+.Chart_title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 10px;
+    padding-top: 6px;
+}
+.Chart_title_h2 {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 550;
+    color: #33384a;
+    opacity: 0.81;
+}
+.Chart_Options {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.Chart_Options span {
+    margin-top: 0px;
+    font-size: 12px;
+    color: #33384a;
+    opacity: 0.9;
+}
+.Chart_Div_Doughnut {
+    width: 43%;
+    /* height: 100%; */
+}
+.Chart_Div_Bar, .Chart_Div_Line {
+    width: 46%;
+    /* height: 100%; */
+}
+.Chart_ {
+    width: 100%;
+    margin-top: 20px;
+    height: 250px;
+}
