@@ -174,7 +174,7 @@
     align-items: center;
     cursor: pointer;
 }
-.Rab_li_isSelected {
+.Rab_li_true {
     background-color: #434a60;
     border-left: 1px solid var(--blue);
 }

@@ -37,6 +37,7 @@ export default function Report({ id, user } : { id: string, user: DBUserType | n
 
     const router = useRouter();
     const mp = useRef<number[]>([]);
+    const [slideIndex, setSlideIndex] = useState<number>(-1);
     const [error, setError] = useState<boolean | string>(false);
     const [loading, setLoading] = useState(true);
     const [showSlides, setShowSlides] = useState<boolean>(true);
@@ -194,6 +195,14 @@ export default function Report({ id, user } : { id: string, user: DBUserType | n
         return "";
     }, [slidesChart.title]);
 
+    const scrollToSlide = useCallback((slide_idx: number) => {
+        const ele = document.getElementById(`Slide_${slide_idx}`);
+        if(ele) {
+            setSlideIndex(slide_idx);
+            ele.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    }, []);
+
     return (
         <div className="w-full h-full">
             {
@@ -292,8 +301,15 @@ export default function Report({ id, user } : { id: string, user: DBUserType | n
                                 <div className={styles.Ra_body}>
                                     <ul className={styles.Rab_ul}>
                                         {slidesArray.map((slide, slide_idx) => (
-                                            <li className={styles.Rab_li} key={`slide_idx_${slide_idx}`}>
-                                                <div className={`${styles.Rab_li_number} flex justify-center items-center`}>{slide_idx + 1}</div>
+                                            <li key={`slide_idx_${slide_idx}`} 
+                                            onClick={() => scrollToSlide(slide_idx)}
+                                            className={`
+                                                ${styles.Rab_li}
+                                                ${styles[`Rab_li_${slide_idx === slideIndex}`]}
+                                            `}>
+                                                <div className={`${styles.Rab_li_number} flex justify-center items-center`}>
+                                                    {slide_idx + 1}
+                                                </div>
                                                 <div className={styles.Rab_li_thumbNail}>
                                                     {slidesImages.length === 0 ?
                                                         <SlideLoadingSpinner width={"1px"} height={"1px"} color={""} /> :
