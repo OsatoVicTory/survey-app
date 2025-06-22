@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import ReportLoading from "./loading";
+import ReportLoading from "../loading";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect } from "react";
 import { AppContext } from "@/context/app";

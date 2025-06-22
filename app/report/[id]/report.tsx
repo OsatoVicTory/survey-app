@@ -13,7 +13,7 @@ import { HiMiniDocument } from "react-icons/hi2";
 import { TbReload } from "react-icons/tb";
 import Link from "next/link";
 import { SurveysError } from "@/app/home/subs";
-import ReportLoading from "./loading";
+import ReportLoading from "../loading";
 import { useRouter } from "next/navigation";
 import { getSocketServerUrl, getSurvey } from "@/app/actions/survey";
 import ToastAlert from "@/components/alert";

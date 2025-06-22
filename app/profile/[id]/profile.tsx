@@ -1,7 +1,7 @@
 "use client";
 
 import { SiGoogleforms } from "react-icons/si";
-import styles from "../home/hm.module.css";
+import styles from "../../home.module.css";
 import Link from "next/link";
 import { IoSearch } from "react-icons/io5";
 // import img from "@/public/formTest.png";
@@ -11,7 +11,7 @@ import bg from "@/public/bg-lr.png";
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { SurveyProfileT } from "@/types/survey";
 import { SurveysError, SurveysLoading } from "../../home/subs";
-import ReportLoading from "../../report/[id]/loading";
+import ReportLoading from "../../report/loading";
 import NoData from "@/components/noData";
 import { useRouter } from "next/navigation";
 import { fetchManySurveys } from "../../actions/survey";
