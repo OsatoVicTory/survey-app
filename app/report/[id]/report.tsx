@@ -37,7 +37,7 @@ export default function Report({ id, user } : { id: string, user: DBUserType | n
 
     const router = useRouter();
     const mp = useRef<number[]>([]);
-    const [slideIndex, setSlideIndex] = useState<number>(-1);
+    const [slideIndex, setSlideIndex] = useState<number>(0);
     const [error, setError] = useState<boolean | string>(false);
     const [loading, setLoading] = useState(true);
     const [showSlides, setShowSlides] = useState<boolean>(true);
@@ -196,12 +196,36 @@ export default function Report({ id, user } : { id: string, user: DBUserType | n
     }, [slidesChart.title]);
 
     const scrollToSlide = useCallback((slide_idx: number) => {
-        const ele = document.getElementById(`Slide_${slide_idx}`);
-        if(ele) {
-            setSlideIndex(slide_idx);
-            ele.scrollIntoView({ behavior: "smooth", block: "start" });
+        if(slidesImages.length > 0) {
+            const ele = document.getElementById(`Slide_${slide_idx}`);
+            if(ele) {
+                setSlideIndex(slide_idx);
+                ele.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
         }
-    }, []);
+    }, [slidesImages.length]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        const id_split = entry.target.id.split("_");
+                        if(id_split.length > 1) setSlideIndex(Number(id_split[1]));
+                    }
+                })
+            }, 
+            { threshold: 0.3 }
+        );
+
+        if(slidesChart.loaded) {
+            document.querySelectorAll(`.${styles.Rmd_li}`).forEach((ele) => {
+                if(ele) observer.observe(ele);
+            });
+        }
+
+        return () => observer.disconnect();
+    }, [slidesChart.loaded]);
 
     return (
         <div className="w-full h-full">
