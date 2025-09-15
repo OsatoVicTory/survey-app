@@ -242,8 +242,8 @@ export default function Survey({ id }: { id: string }) {
 
                     {submitLoading === "success" && <p className="p-green">Response submitted successfully</p>}
 
-                    {submitLoading !== "success" && <button onClick={handleSubmit}
-                    className={`${styles.Ff_btn} ${styles[`Ff_btn_${submitLoading}`]}`}>
+                    {submitLoading !== "success" && <button onClick={handleSubmit} disabled={submitLoading === true}
+                    className={`${styles.Ff_btn} ${styles[`Ff_btn_${submitLoading}`]} ${submitLoading===true ? "cursor-not-allowed" : ""}`}>
                         {submitLoading === true && <ButtonLoadingSpinner width={'19px'} height={"27px"} color={'white'} />}
                         <span>Submit</span>
                     </button>}

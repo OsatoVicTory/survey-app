@@ -171,7 +171,8 @@ export default function Form() {
                     <Link href="/" className={styles.Fn_logo}>mavvle</Link>
                 </div>
                 <div className={styles.Fn_div}>
-                    <button className={styles.Fn_btn} onClick={submitForm}>
+                    <button className={`${styles.Fn_btn} ${createRef === "loading" ? "cursor-not-allowed" : ""}`} 
+                    disabled={createRef === "loading"} onClick={submitForm}>
                         {createRef !== "loading" && <MdPublish className={styles.Fn_btn_icon} />}
                         {createRef === "loading" && <ButtonLoadingSpinner width={'18px'} height={"25px"} color={'white'} />}
                         <span>Publish</span>

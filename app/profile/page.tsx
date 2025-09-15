@@ -1,7 +1,8 @@
 "use client";
 
 import { SiGoogleforms } from "react-icons/si";
-import styles from "../home.module.css";
+// import styles from "../home.module.css";
+import styles from "../home/hm.module.css";
 import Link from "next/link";
 import { IoSearch } from "react-icons/io5";
 // import img from "@/public/formTest.png";
@@ -188,8 +189,8 @@ export default function ProfileUser() {
                                                                 <Link href={`/survey/${survey.survey_id}`} 
                                                                 className={styles.Hmb_survey_link}>
                                                                     <div className={styles.Hmbs}>
-                                                                        <div className={`${styles.Hmbs_top} ${styles.Hmbs_top_show}`}>
-                                                                            <Image src={survey.img} alt={"survey"} fill />
+                                                                        <div className={`${styles.Hmbs_top} ${styles.Hmbs_top_show} relative`}>
+                                                                            <Image src={survey.img} alt={"survey"} fill sizes="(max-width: 768px) 300px, 200px" />
                                                                         </div>
                                                                         <div className={styles.Hmbs_base}>
                                                                             <h3>{getPureTitle(survey.title)}</h3>

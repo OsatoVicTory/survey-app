@@ -138,7 +138,7 @@ export default function Home() {
                                         {surveys.map((survey) => (
                                             <li key={`survey-${survey.survey_id}`} className={styles.Hmb_li}>
                                                 <Link href={`/survey/${survey.survey_id}`} className={styles.Hmb_survey_link}>
-                                                    <div className={styles.Hmbs}>
+                                                    <div className={`${styles.Hmbs} relative`}>
                                                         <div className={`${styles.Hmbs_top} ${styles.Hmbs_top_show}`}>
                                                             <Image src={survey.img} alt={"survey"} 
                                                             fill sizes="(max-width: 768px) 300px, 200px" />
